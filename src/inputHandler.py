@@ -8,6 +8,7 @@ from util import *
 
 # Custom Button Class that is created for every button
 
+
 class Button:
     def __init__(self, isToggled) -> None:
         self.isToggled = isToggled
@@ -45,7 +46,7 @@ class Input:
         self.setupCallbacks(__controller)
 
     def setupCallbacks(self, __controller):
-        try:  
+        try:
             # Press/Release Callbacks for Letter Buttons
             __controller.buttonY.pressed(self.y.pressed)
             __controller.buttonY.released(self.y.released)
@@ -76,3 +77,10 @@ class Input:
         except:
             # ERROR HAS OCCURED
             print("hi")
+
+    def getAxis(self, __controller, cutoff):
+        self.axis1 = processAxis(__controller.axis1.position(), cutoff)
+        self.axis2 = processAxis(__controller.axis1.position(), cutoff)
+        self.axis3 = processAxis(__controller.axis1.position(), cutoff)
+        self.axis4 = processAxis(__controller.axis1.position(), cutoff)
+
