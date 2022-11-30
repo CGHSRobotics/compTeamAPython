@@ -1,9 +1,5 @@
 
-import sys  # import all of these!
-import vex
 from vex import *
-import math
-import util
 from util import *
 
 # Custom Button Class that is created for every button
